@@ -1,6 +1,7 @@
 package com.enma.app.simple.simpleapp
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -22,7 +23,9 @@ class CategoriesRvAdapter(val context: Context): RecyclerView.Adapter<Categories
         holder.categoryName.text = MainActivity.catsList[position].name
         Picasso.get().load(MainActivity.catsList[position].image).into(holder.categoryIcon)
         holder.parentLL.setOnClickListener{
-
+            val intent = Intent(context, FeedsActivity::class.java)
+            intent.putExtra("cat", MainActivity.catsList[position].id)
+            context.startActivity(intent)
         }
     }
 

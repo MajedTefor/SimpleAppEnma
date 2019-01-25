@@ -13,6 +13,6 @@ interface ApiURLs {
 
     val GET_CATEGORIES_URL:String get() = base + "categories?app_id=" + APP_ID + "&app_secret=" + APP_SECRET
 
-    val GET_POSTS_URL:String get() = base + "posts?app_id=" + APP_ID + "&app_secret=" + APP_SECRET
+    val GET_POSTS_URL:String get() = base + "posts?"
 
 }

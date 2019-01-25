@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.view.View
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity(), ApiURLs {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        MainActivity.catsList.clear()
         adapter = CategoriesRvAdapter(this)
         categoriesRV.adapter = adapter
         categoriesRV.layoutManager = LinearLayoutManager(this)
@@ -49,6 +51,8 @@ class MainActivity : AppCompatActivity(), ApiURLs {
                         catsList.add(cat)
                     }
                     adapter.notifyDataSetChanged()
+                    progressPB.visibility = View.GONE
+                    categoriesRV.visibility = View.VISIBLE
                 },
                 Response.ErrorListener {
                     queue.cancelAll("c")

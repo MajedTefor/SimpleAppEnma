@@ -1,9 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="15dp"
+    app:cardElevation="2dp"
+    android:layout_height="wrap_content">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/postImgIV"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="تيست تيست تيست تيست"
+            android:id="@+id/postTitleTV"
+            android:textColor="#333"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="22sp"
+            android:padding="17dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f3f3f3"/>
+
+        <LinearLayout
+            android:padding="17dp"
+            android:gravity="center"
+            android:layoutDirection="rtl"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/writerImgIV"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="10dp"
+                android:layout_width="40dp"
+                android:src="@drawable/account"
+                android:tint="@color/colorPrimary"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:text="اسم اسم اسم"
+                android:layout_weight="1"
+                android:id="@+id/writerNameTV"
+                android:gravity="right"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="#333"
+                />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/comment_card"
+                android:tint="@color/colorPrimary"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="13dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="300"
+                android:textSize="17sp"
+                android:textColor="#333"
+                android:id="@+id/commentsTV"
+                />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/thumb_up_card"
+                android:tint="@color/colorPrimary"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="13dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="300"
+                android:textSize="17sp"
+                android:textColor="#333"
+                android:id="@+id/likesTV"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>
